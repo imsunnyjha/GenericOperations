@@ -9,6 +9,7 @@ namespace OperationsWithGenerics
             Console.WriteLine("Welcome to generic operations!");
             MaximumInteger();
             MaximumDouble();
+            MaximumString();
         }
         public static void MaximumInteger()
         {
@@ -57,6 +58,30 @@ namespace OperationsWithGenerics
             else largestNumber = thirdNumber;
 
             Console.WriteLine(largestNumber);
+        }
+        public static void MaximumString()
+        {
+            string firstValue;
+            string secondValue;
+            string thirdValue;
+            string largestValue;
+
+            //input the numbers
+            Console.Write("Enter first number : ");
+            firstValue = Console.ReadLine();
+            Console.Write("Enter second number: ");
+            secondValue = Console.ReadLine();
+            Console.Write("Enter third number : ");
+            thirdValue = Console.ReadLine();
+
+            //finding largest string 
+            if (firstValue.Length>secondValue.Length && firstValue.Length>thirdValue.Length)
+                largestValue = firstValue;
+            else if (secondValue.Length > firstValue.Length && secondValue.Length > thirdValue.Length)
+                largestValue = secondValue;
+            else largestValue = thirdValue;
+
+            Console.WriteLine(largestValue);
         }
     }
 }
