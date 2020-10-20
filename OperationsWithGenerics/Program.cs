@@ -7,81 +7,32 @@ namespace OperationsWithGenerics
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to generic operations!");
-            MaximumInteger();
-            MaximumDouble();
-            MaximumString();
+            ///<summary>
+            ///Printing Max of integers
+            ///</summary>
+            int[] iArr = { 1, 2, 3, 4, 4, 0, -99 };
+            GenericOperation<int> genericInt = new GenericOperation<int>(iArr);
+            genericInt.PrintMax();
+
+            ///<summary>
+            ///Printing Max of doubles
+            ///</summary>
+            double[] dArr = { 1.9, 2.789, 32.00001, 499.00001, -4, 0, -99,009 };
+            GenericOperation<double> genericDouble = new GenericOperation<double>(dArr);
+            genericDouble.PrintMax();
+
+            ///<summary>
+            ///Printing Max of doubles
+            ///</summary>
+            string[] sArr = { "au", "kiki", "john", "lebanon", "abraham" };
+            GenericOperation<string> genericString = new GenericOperation<string>(sArr);
+            genericString.PrintMax();
+
+
         }
-        public static void MaximumInteger()
-        {
-            int firstNumber;
-            int secondNumber;
-            int thirdNumber;
-            int largestNumber;
 
-            //input the numbers
-            Console.Write("Enter first number : ");
-            firstNumber = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter second number: ");
-            secondNumber = Convert.ToInt32(Console.ReadLine());
-            Console.Write("Enter third number : ");
-            thirdNumber = Convert.ToInt32(Console.ReadLine());
-
-            //finding largest number 
-            if (firstNumber > secondNumber && firstNumber > thirdNumber)
-                largestNumber = firstNumber;
-            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
-                largestNumber = secondNumber;
-            else largestNumber = thirdNumber;
-
-            Console.WriteLine(largestNumber);
-        }
-        public static void MaximumDouble()
-        {
-            double firstNumber;
-            double secondNumber;
-            double thirdNumber;
-            double largestNumber;
-
-            //input the numbers
-            Console.Write("Enter first number : ");
-            firstNumber = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Enter second number: ");
-            secondNumber = Convert.ToDouble(Console.ReadLine());
-            Console.Write("Enter third number : ");
-            thirdNumber = Convert.ToDouble(Console.ReadLine());
-
-            //finding largest number 
-            if (firstNumber > secondNumber && firstNumber > thirdNumber)
-                largestNumber = firstNumber;
-            else if (secondNumber > firstNumber && secondNumber > thirdNumber)
-                largestNumber = secondNumber;
-            else largestNumber = thirdNumber;
-
-            Console.WriteLine(largestNumber);
-        }
-        public static void MaximumString()
-        {
-            string firstValue;
-            string secondValue;
-            string thirdValue;
-            string largestValue;
-
-            //input the numbers
-            Console.Write("Enter first number : ");
-            firstValue = Console.ReadLine();
-            Console.Write("Enter second number: ");
-            secondValue = Console.ReadLine();
-            Console.Write("Enter third number : ");
-            thirdValue = Console.ReadLine();
-
-            //finding largest string 
-            if (firstValue.Length>secondValue.Length && firstValue.Length>thirdValue.Length)
-                largestValue = firstValue;
-            else if (secondValue.Length > firstValue.Length && secondValue.Length > thirdValue.Length)
-                largestValue = secondValue;
-            else largestValue = thirdValue;
-
-            Console.WriteLine(largestValue);
-        }
     }
+
+    
 }
+
